@@ -1,118 +1,97 @@
 🎬 Movie Recommendation System
 
 
-A personalized movie recommendation system built using the TMDb API. Users can discover new movies based on their preferences with an intuitive and responsive web interface.
+This is a Movie Recommendation System built using Streamlit, Python, and The Movie Database (TMDb) API. It suggests 5 similar movies based on the one you select from a dropdown.
 
 🚀 Features
-🔍 Search for any movie
+Pick any movie from the list and get 5 similar movie recommendations.
 
-🎯 Get personalized movie recommendations
+Uses cosine similarity for recommendations.
 
-🖼️ View posters, descriptions, ratings, and more
+Displays movie posters using TMDb API.
 
-🧠 Recommendation engine using content-based filtering
-
-🌐 Clean and responsive web UI using HTML, CSS, and JavaScript
+Interactive UI powered by Streamlit.
 
 🛠️ Tech Stack
-Frontend: HTML, CSS, JavaScript
+Python 🐍
 
-Backend (optional): Python (Flask/Streamlit for testing)
+Pandas
 
-API: TMDb API
+Scikit-learn (for similarity computation)
 
-Recommendation Engine: Content-based filtering using movie metadata
+Streamlit
 
-🧩 How It Works
-Movie Metadata (genres, overview, keywords, etc.) is used to compute similarity between movies.
+TMDb API (for movie posters)
 
-Cosine Similarity is calculated on movie vectors.
+🧠 How It Works
+The system loads a precomputed similarity matrix.
 
-Based on a selected movie, the system recommends the most similar titles.
+When a user selects a movie, it finds the top 5 similar movies.
 
-📝 Setup Instructions
-Clone the repository:
+Posters for these movies are fetched from TMDb API.
+
+Recommendations are displayed with titles and images.
+
+📦 Installation
+Clone the repository
 
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/movie-recommendation-system.git
-cd movie-recommendation-system
-Get your TMDb API key:
+git clone https://github.com/your-username/movie-recommender.git
+cd movie-recommender
+Install dependencies
 
-Sign up at TMDb
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Ensure these files are in your directory:
 
-Go to Settings → API → Generate a key
+movie_dict.pkl – contains movie metadata.
 
-Replace API_KEY placeholder in your code with the TMDb API key.
+similarity.pkl – contains the similarity matrix.
 
-Run the app:
-
-If you're using pure HTML/JS:
-
-Just open index.html in your browser.
-
-If you're using a backend (Flask/Streamlit):
+Run the Streamlit app
 
 bash
 Copy
 Edit
 streamlit run app.py
-or
+🔐 TMDb API Key
+Make sure your TMDb API key is working and inserted correctly in the fetch_poster() function:
 
-bash
+python
 Copy
 Edit
-python app.py
-📸 Screenshots
-Include screenshots of the UI if available.
+url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=YOUR_API_KEY"
+Replace YOUR_API_KEY with your actual TMDb API key. You can get your API key here.
+
+📸 Sample UI
+
+Note: Add your own screenshot here.
 
 📁 Project Structure
-graphql
 Copy
 Edit
-movie-recommendation-system/
-│
-├── index.html
-├── style.css
-├── script.js
-├── app.py                 # (Optional Flask/Streamlit backend)
-├── data/                  # Preprocessed movie data (CSV, JSON, etc.)
-├── README.md
-└── requirements.txt       # If using Python backend
-📦 Dependencies (for backend)
-bash
-Copy
-Edit
-pip install -r requirements.txt
-numpy
+.
+├── app.py
+├── movie_dict.pkl
+├── similarity.pkl
+├── requirements.txt
+└── README.md
+✨ Future Improvements
+Add movie genres, ratings, and overviews.
 
-pandas
+Allow users to search movies using keywords.
 
-scikit-learn
+Add collaborative filtering for personalized recommendations.
 
-requests
+🧑‍💻 Author
+Your Name – anandy07
 
-streamlit or flask (if using backend)
-
-✨ Future Enhancements
-Login and save favorites
-
-Hybrid recommendation (collaborative + content-based)
-
-Multi-language support
-
-Genre/actor-based filtering
-
-🙌 Acknowledgements
-TMDb API
-
-Inspiration from various open-source projects and Kaggle datasets
-
-📄 License
-MIT License
+📜 License
+This project is licensed under the MIT License.
 
 
 Website Link : https://movie-recommendation-system-i226rkr4lovu9kfe43fdjq.streamlit.app/
-
-
