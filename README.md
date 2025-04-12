@@ -97,19 +97,6 @@ Edit
 ├── Movie_Recommender.ipynb # Jupyter Notebook for preprocessing
 ├── requirements.txt       # Python dependencies
 └── README.md
-📸 Sample UI
-Add your screenshot here if you have one.
-
-✅ Example Movies You Can Try
-Inception
-
-Avatar
-
-The Dark Knight
-
-Interstellar
-
-Titanic
 
 ✨ Future Ideas
 Add filters for genre, year, or language.
