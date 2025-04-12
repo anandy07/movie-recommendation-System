@@ -1,36 +1,46 @@
 🎬 Movie Recommendation System
-
-
-This is a Movie Recommendation System built using Streamlit, Python, and The Movie Database (TMDb) API. It suggests 5 similar movies based on the one you select from a dropdown.
+This is a Movie Recommendation System built using Python, Streamlit, Jupyter Notebook, and The Movie Database (TMDb) API. It recommends 5 similar movies based on the selected movie and displays their posters.
 
 🚀 Features
-Pick any movie from the list and get 5 similar movie recommendations.
+Select a movie and get 5 similar movie suggestions.
 
-Uses cosine similarity for recommendations.
+Uses cosine similarity based on movie features.
 
-Displays movie posters using TMDb API.
+Posters displayed using TMDb API.
 
-Interactive UI powered by Streamlit.
+Interactive UI with Streamlit.
+
+Data preprocessing and modeling done in Jupyter Notebook.
 
 🛠️ Tech Stack
 Python 🐍
 
-Pandas
+Pandas, NumPy
 
-Scikit-learn (for similarity computation)
+Scikit-learn (cosine similarity)
 
-Streamlit
+Jupyter Notebook (data preprocessing/model training)
 
-TMDb API (for movie posters)
+Streamlit (front-end)
 
-🧠 How It Works
-The system loads a precomputed similarity matrix.
+TMDb API (movie poster retrieval)
 
-When a user selects a movie, it finds the top 5 similar movies.
+🧠 Workflow
+Jupyter Notebook is used for:
 
-Posters for these movies are fetched from TMDb API.
+Loading and preprocessing movie data.
 
-Recommendations are displayed with titles and images.
+Calculating similarity matrix.
+
+Saving movie_dict.pkl and similarity.pkl.
+
+Streamlit App is used for:
+
+Taking movie input from user.
+
+Fetching top 5 similar movies.
+
+Displaying results with posters via TMDb API.
 
 📦 Installation
 Clone the repository
@@ -40,52 +50,71 @@ Copy
 Edit
 git clone https://github.com/your-username/movie-recommender.git
 cd movie-recommender
+Create a virtual environment (optional but recommended)
+
+bash
+Copy
+Edit
+python -m venv env
+source env/bin/activate   # or `env\Scripts\activate` on Windows
 Install dependencies
 
 bash
 Copy
 Edit
 pip install -r requirements.txt
-Ensure these files are in your directory:
+Run Jupyter Notebook (optional, if modifying or retraining)
 
-movie_dict.pkl – contains movie metadata.
-
-similarity.pkl – contains the similarity matrix.
-
-Run the Streamlit app
+bash
+Copy
+Edit
+jupyter notebook
+Run the Streamlit App
 
 bash
 Copy
 Edit
 streamlit run app.py
 🔐 TMDb API Key
-Make sure your TMDb API key is working and inserted correctly in the fetch_poster() function:
+The poster images are fetched using TMDb API. Replace the placeholder in the code with your actual API key:
 
 python
 Copy
 Edit
 url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=YOUR_API_KEY"
-Replace YOUR_API_KEY with your actual TMDb API key. You can get your API key here.
+Get your API key here: TMDb API
 
-📸 Sample UI
-
-Note: Add your own screenshot here.
-
-📁 Project Structure
+📁 Files Included
+bash
 Copy
 Edit
 .
-├── app.py
-├── movie_dict.pkl
-├── similarity.pkl
-├── requirements.txt
+├── app.py                 # Streamlit frontend
+├── movie_dict.pkl         # Movie metadata
+├── similarity.pkl         # Precomputed similarity matrix
+├── Movie_Recommender.ipynb # Jupyter Notebook for preprocessing
+├── requirements.txt       # Python dependencies
 └── README.md
-✨ Future Improvements
-Add movie genres, ratings, and overviews.
+📸 Sample UI
+Add your screenshot here if you have one.
 
-Allow users to search movies using keywords.
+✅ Example Movies You Can Try
+Inception
 
-Add collaborative filtering for personalized recommendations.
+Avatar
+
+The Dark Knight
+
+Interstellar
+
+Titanic
+
+✨ Future Ideas
+Add filters for genre, year, or language.
+
+Include movie overview, rating, and runtime.
+
+Add collaborative filtering with user-based preferences.
 
 🧑‍💻 Author
 Your Name – anandy07
