@@ -138,4 +138,4 @@ Pull requests, issues, and suggestions are always welcome.
 
 ---
 
-Would you like me to generate the `requirements.txt` for this project too?
+
